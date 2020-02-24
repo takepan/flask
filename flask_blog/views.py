@@ -20,11 +20,11 @@ def login():
 		else:
 			session['logged_in'] = True
 			flash('ログインしました')
-			return redirect(url_for('show_entries'))
+			return redirect(url_for('entry.show_entries'))
 	return render_template('login.html')
 
 @app.route('/logout')
 def logout():
 	session.pop('logged_in', None)
 	flash('ログアウトしました')
-	return redirect(url_for('show_entries'))
+	return redirect(url_for('entry.show_entries'))
